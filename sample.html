@@ -1,2 +1,150 @@
-<h1>Dejima Technologies</h1>
-<p>Dejima Technologies is a company that provides a platform for building distributed applications.</p>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dejima Technologies - 長崎のプログラミングスクールとWEB開発</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Dejima Technologies</h1>
+            <p>学ぶ、働く、稼ぐを長崎で</p>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-images">
+            <img src="assets/images/nagasaki_1.jpg" alt="長崎の風景1" class="hero-image" id="hero-image">
+        </div>
+        <div class="hero-text">
+            <h2>長崎でプログラミングを学び、業務委託として働く</h2>
+            <p>Dejima Technologiesでは、長崎でプログラミングを学び、実践的なスキルを身につけて、業務委託として働く機会を提供します。</p>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2>当社のプログラミングスクール</h2>
+            <p>Dejima Technologiesは、長崎に拠点を置くプログラミングスクールです。授業形式は一般的なものとは異なり、以下の特徴があります：</p>
+            <ul>
+                <li>授業は行いません。参考となるURLやリソースを提供し、学習者は自分のペースで学びます。</li>
+                <li>学習中に生じた質問に対して、個別にサポートを行います。</li>
+                <li>卒業試験に合格後、業務委託として実際のプロジェクトに携わることができます。</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2>WEB開発サービス</h2>
+            <p>Dejima Technologiesでは、企業様向けにWEBの受託開発を行っています。お客様のニーズに応じて、最適なソリューションを提供します。</p>
+            <p>お気軽にご相談ください。</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Dejima Technologies. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        header {
+            background-color: #2d3a3f;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .hero {
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero-images {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+        .hero-image {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            transition: opacity 1s ease-in-out;
+        }
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .hero h2 {
+            font-size: 2em;
+            margin: 0;
+        }
+        .about, .services {
+            padding: 40px 0;
+            background-color: #fff;
+            margin-top: 20px;
+        }
+        .about h2, .services h2 {
+            font-size: 2em;
+            color: #2d3a3f;
+        }
+        .about ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        footer {
+            background-color: #2d3a3f;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = [
+            'assets/images/nagasaki_1.jpg',
+            'assets/images/nagasaki_2.jpg'
+        ];
+
+        function changeImage() {
+            const heroImage = document.getElementById('hero-image');
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            heroImage.style.opacity = 0;
+
+            setTimeout(() => {
+                heroImage.src = images[currentImageIndex];
+                heroImage.style.opacity = 1;
+            }, 1000); // 1秒のフェードアウト後に切り替え
+        }
+
+        setInterval(changeImage, 5000); // 5秒ごとに画像が切り替わる
+    </script>
+</body>
+</html>
