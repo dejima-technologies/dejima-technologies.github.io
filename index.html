@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G3E43HZYZ0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-G3E43HZYZ0');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -27,8 +34,9 @@
     <section class="about">
         <div class="container">
             <h2>Dijima BootCamp</h2>
-            <p>Dejima BootCampは、長崎に拠点を置くオフライン主体のプログラミングスクールです。授業形式は一般的なものとは異なり、以下の特徴があります：</p>
+            <p>Dejima BootCampは、長崎市に拠点を置くオフライン主体のプログラミングスクールです。授業形式は一般的なものとは異なり、以下の特徴があります：</p>
             <ul>
+                <li>入会前に適正試験を受けていただきます。</li>
                 <li>授業は行いません。参考となるURLやリソースを提供し、学習者は自分のペースで学びます。</li>
                 <li>学習中に生じた質問に対して、個別にサポートを行います。</li>
                 <li>卒業試験に合格後、弊社提携先企業に業務委託として実際のプロジェクトに携わることができます。</li>
@@ -63,10 +71,15 @@
             margin: 0 auto;
         }
         header {
-            background-color: #2d3a3f;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            opacity: 0.5;
+            color: #333;
+            padding: 10px 0;
+            z-index: 10;
         }
         header h1 {
             margin: 0;
@@ -76,13 +89,17 @@
             font-size: 1.2em;
             margin: 10px 0;
         }
-        .hero {
+        .hero-images {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
             position: relative;
-            text-align: center;
         }
         .hero-image {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
         }
         .hero-text {
             position: absolute;
@@ -91,6 +108,10 @@
             transform: translate(-50%, -50%);
             color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            padding: 0 20px;
+            width: 90%;
+            max-width: 750px;
+            text-align: center;
         }
         .hero h2 {
             font-size: 2em;
@@ -116,25 +137,5 @@
             text-align: center;
         }
     </style>
-    <script>
-        let currentImageIndex = 0;
-        const images = [
-            'assets/images/nagasaki_1.jpg',
-            'assets/images/nagasaki_2.jpg'
-        ];
-
-        function changeImage() {
-            const heroImage = document.getElementById('hero-image');
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            heroImage.style.opacity = 0;
-
-            setTimeout(() => {
-                heroImage.src = images[currentImageIndex];
-                heroImage.style.opacity = 1;
-            }, 1000); // 1秒のフェードアウト後に切り替え
-        }
-
-        setInterval(changeImage, 5000); // 5秒ごとに画像が切り替わる
-    </script>
 </body>
 </html>
